@@ -34,9 +34,3 @@ This step should ensure:
  - Focus on high-level scenarios with multiple components and features involved
  - OpenShift should be the primary target platform for product to ensure good interoperability
  - Ensure platform specific features or components have appropriate test coverage
-
-## Advanced topics for test development
-In the future we should extends this test to databases that support HTTP/2 as:
- - Elasticsearch Rest Client
- - `quarkus-mongodb-rest-data-panache`
- - `quarkus-hibernate-orm-rest-data-panache`
