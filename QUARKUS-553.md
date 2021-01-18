@@ -22,14 +22,14 @@ As part of the above extensions development, the following test coverage has bee
  - OIDC Client Custom Filter using lazy tokens acquisition.
  - OIDC Token Propagation using the `AccessToken` annotation.
 
- Therefore, the scope of the testing should ensure the compatibility with downstream endpoints such as the `RestClient` client and also verify the integration with the RH SSO versions.
+ Therefore, the scope of the testing should ensure the compatibility with the [Quarkus Rest Client](https://quarkus.io/guides/rest-client) extension and also verify the integration with the RH SSO versions.
 
 ### Impact on testsuites and testing automation:
  - Smoke tests to be added into the OpenShift TS:
    - Scenario with `OIDC Client` using RH SSO 7.3 and RH SSO 7.4.
    - Scenario with multitenant configuration using `OIDC Clients` new framework.
  - For integration components, more test development needs to be added in Beefy-scenarios testsuite:
-   - Integration with [Rest Client](https://quarkus.io/guides/rest-client) Quarkus extension
+   - Integration with [Quarkus Rest Client](https://quarkus.io/guides/rest-client) extension
  - Ensure this coverage works both in JVM and NATIVE mode
 
 ### Impact on resources:
