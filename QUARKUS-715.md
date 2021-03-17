@@ -23,7 +23,7 @@ An integration test verifying correctness of the feature on OpenShift clusters w
 [quarkus-qe/quarkus-openshift-test-suite](https://github.com/quarkus-qe/quarkus-openshift-test-suite). The test will be
 an extension of existing SQL test cases to use application with multiple Hibernate persistence units.
 
-A new module will be added to [quarkus-qe/beefy-scenarios](https://github.com/quarkus-qe/beefy-scenarios/tree/master/004-quarkus-HHH-and-HV)
+A new module will be added to [quarkus-qe/beefy-scenarios](https://github.com/quarkus-qe/beefy-scenarios/tree/main/004-quarkus-HHH-and-HV)
 with an application using multiple persistence units with MariaDB, PostgreSQL and MSSQL.
 
 ### Platform testing
@@ -31,7 +31,7 @@ Tests are going to be executed against all tested versions of databases, RHEL an
 Both the JVM and native mode is going to be tested.
 
 ## Impact on resources
-- A new module will be added to [quarkus-qe/beefy-scenarios](https://github.com/quarkus-qe/beefy-scenarios/tree/master/004-quarkus-HHH-and-HV).
+- A new module will be added to [quarkus-qe/beefy-scenarios](https://github.com/quarkus-qe/beefy-scenarios/tree/main/004-quarkus-HHH-and-HV).
   Tests will required containerized databases. Timeframe for execution is estimated to tens of minutes for both the JVM
   and native mode.
 - Implementation of deployment using multiple persistence units within OpenShift test suite will double the time of 

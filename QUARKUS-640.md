@@ -29,7 +29,7 @@ Following actions were taken to ensure familiarity:
 ## Automated test development
 
 Two scenarios has been setup:
-- [KStreams Scenario](https://github.com/quarkus-qe/quarkus-openshift-test-suite/tree/master/messaging/kafka-streams-reactive-messaging): There is an EventsProducer that generate login status events every 100ms. A Kafka stream called WindowedLoginDeniedStream will aggregate these events in fixed time windows of 3 seconds. So if the number of wrong access excess a threshold, then a new alert event is thrown. All aggregated events(not only unauthorized) are persisted.
+- [KStreams Scenario](https://github.com/quarkus-qe/quarkus-openshift-test-suite/tree/main/messaging/kafka-streams-reactive-messaging): There is an EventsProducer that generate login status events every 100ms. A Kafka stream called WindowedLoginDeniedStream will aggregate these events in fixed time windows of 3 seconds. So if the number of wrong access excess a threshold, then a new alert event is thrown. All aggregated events(not only unauthorized) are persisted.
 
 - [Kafka AVRO Scenario](https://github.com/quarkus-qe/quarkus-openshift-test-suite/pull/140): There is an EventsProducer that generates stock price events every 1s. The events are typed by an AVRO schema.  
 A Kafka consumer will read these events serialized by AVRO and change a `status` property to `COMPLETED`. 

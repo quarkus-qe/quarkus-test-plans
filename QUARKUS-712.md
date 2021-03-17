@@ -19,7 +19,7 @@ Following actions were taken to ensure familiarity:
 
 ## Automated test development
 
-- [Quarkus/Mutiny Http Client](https://github.com/quarkus-qe/beefy-scenarios/tree/master/013-quarkus-oidc-restclient): Ping API will invoke Pong API using Quarkus Mutiny RestClient and returns the expected "ping pong" output.
+- [Quarkus/Mutiny Http Client](https://github.com/quarkus-qe/beefy-scenarios/tree/main/013-quarkus-oidc-restclient): Ping API will invoke Pong API using Quarkus Mutiny RestClient and returns the expected "ping pong" output.
 
 ## Advanced topics for test development
 The following advanced topics are listed for future consideration. 

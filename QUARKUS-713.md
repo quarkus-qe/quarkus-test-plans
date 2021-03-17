@@ -14,7 +14,7 @@ possible for the users to develop their kubectl plugins or OpenShift operators.
 - Determine impact on QE infrastructure - e.g. increased complexity of existing automation, maintenance burden, need for new external resources
 
 ### Impact on testsuites and testing automation:
-- Upstream smoke test [`OpenShiftClientTest`](https://github.com/quarkusio/quarkus/blob/master/integration-tests/openshift-client/src/test/java/io/quarkus/it/openshift/client/OpenShiftClientTest.java)
+- Upstream smoke test [`OpenShiftClientTest`](https://github.com/quarkusio/quarkus/blob/main/integration-tests/openshift-client/src/test/java/io/quarkus/it/openshift/client/OpenShiftClientTest.java)
   was implemented as part of feature development
 - fabric8 client libraries are verified in the [upstream CI](https://github.com/fabric8io/kubernetes-client/actions)
 - [quarkus-qe/quarkus-openshift-test-suite](https://github.com/quarkus-qe/quarkus-openshift-test-suite) uses the fabric8 OpenShift client to manage kube objects from test code

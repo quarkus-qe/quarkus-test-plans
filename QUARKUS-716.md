@@ -20,4 +20,4 @@ Following actions were taken to ensure familiarity:
 
 ## Automated test development
 
-- [Quarkus/OpenApi scenario](https://github.com/quarkus-qe/beefy-scenarios/tree/master/013-quarkus-oidc-restclient): Ping API will invoke Pong API using Quarkus Mutiny RestClient and returns the expected "ping pong" output. This API is annotated with OpenAPI tags. 
+- [Quarkus/OpenApi scenario](https://github.com/quarkus-qe/beefy-scenarios/tree/main/013-quarkus-oidc-restclient): Ping API will invoke Pong API using Quarkus Mutiny RestClient and returns the expected "ping pong" output. This API is annotated with OpenAPI tags. 

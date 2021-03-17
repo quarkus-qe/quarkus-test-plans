@@ -39,7 +39,7 @@ Following actions were taken to ensure test coverage and automation for native i
  - Analyze the possible impact on Quarkus itself - e.g performance, compatibility
  - Determine impact on test suites - e.g. new test suite, increased complexity of existing test suite, maintenance burden
 
- As part of the development, code starters are already being verified using `Maven` in [these tests](https://github.com/quarkusio/quarkus/blob/master/integration-tests/devtools/src/test/java/io/quarkus/devtools/codestarts/quarkus/QuarkusCodestartRunIT.java#L74-L90). 
+ As part of the development, code starters are already being verified using `Maven` in [these tests](https://github.com/quarkusio/quarkus/blob/main/integration-tests/devtools/src/test/java/io/quarkus/devtools/codestarts/quarkus/QuarkusCodestartRunIT.java#L74-L90). 
 
 ### Impact on testsuites and testing automation:
  - Test development in Start-Stop testsuite in order to cover:

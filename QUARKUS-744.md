@@ -105,7 +105,7 @@ Security must be another extra point to review. Specially non-application endpoi
 
 ## Automated test development
 
-- [Quarkus/non-application redirection scenario](https://github.com/quarkus-qe/quarkus-openshift-test-suite/tree/master/http/http-advanced): verify that all non-application endpoints are redirected, and checks that Http status is `301` and `Location` header is the expected one. Then verify that httpClient follow redirections.  
+- [Quarkus/non-application redirection scenario](https://github.com/quarkus-qe/quarkus-openshift-test-suite/tree/main/http/http-advanced): verify that all non-application endpoints are redirected, and checks that Http status is `301` and `Location` header is the expected one. Then verify that httpClient follow redirections.  
 
-- [Quarkus/non-application expected behavior scenario](https://github.com/quarkus-qe/beefy-scenarios/pull/106): verify that all non-application endpoints and application base path works as expected with several configuration.
+- [Quarkus/non-application expected behavior scenario](https://github.com/quarkus-qe/beefy-scenarios/tree/main/020-quarkus-http-non-application-endpoints): verify that all non-application endpoints and application base path works as expected with several configuration.
 
