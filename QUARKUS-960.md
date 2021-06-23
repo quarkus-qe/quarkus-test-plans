@@ -11,7 +11,7 @@ The Quarkus CLI is compatible with Maven, Gradle and Jbang tools, however RHBQ i
 
 Test development will focus on the supported features scoped for RHBQ 2.2:
 - Create applications (with a set of extensions)
-- Create extensions
+- List extensions
 - Build existing Quarkus applications on JVM
 - Build existing Quarkus applications on Native (also using container configuration and builder images)
 - Run Quarkus applications on DEV mode
@@ -35,3 +35,4 @@ Following actions were taken to ensure familiarity:
  - Ensure Quarkus CLI is documented
  - Check command autocompletion (also for subcommands)
  - Ensure Quarkus CLI works fine on Windows (Windows compability will be automatically covered in the future)
+ - Compare boot times of the Quarkus CLI to other command tools such as [Spring Boot CLI](https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html) and [Micronout CLI](https://docs.micronaut.io/latest/guide/index.html#buildCLI)
