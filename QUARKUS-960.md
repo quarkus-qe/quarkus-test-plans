@@ -35,4 +35,4 @@ Following actions were taken to ensure familiarity:
  - Ensure Quarkus CLI is documented
  - Check command autocompletion (also for subcommands)
  - Ensure Quarkus CLI works fine on Windows (Windows compability will be automatically covered in the future)
- - Compare boot times of the Quarkus CLI to other command tools such as [Spring Boot CLI](https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html) and [Micronout CLI](https://docs.micronaut.io/latest/guide/index.html#buildCLI)
+ - Compare functionality and user experience of the Quarkus CLI to other command tools such as [Spring Boot CLI](https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html) and [Micronout CLI](https://docs.micronaut.io/latest/guide/index.html#buildCLI)
