@@ -18,6 +18,11 @@ Test development will focus on
  - Use the existing dev mode test coverage to ensure that running scenarios without dev services is still possible
  - Cover DEV UI
  - Quarkus app is waiting for the necessary services to start, developer must be informed about started services progress
+ - DevsServices will be disabled in prod mode and enabled by default in test or dev mode
+ - Validate several configuration properties:
+   - quarkus.kafka.devservices.enabled: Kafka dev services is enabled by default unless kafka.bootstrap.servers is set or if all the Reactive Messaging Kafka channel are configured with a bootstrap.servers. If you set this property to false, then kafka dev services will be disabled in all the cases. 
+   - quarkus.datasource.devservices.enabled: datasource dev services is enabled by default unless there is an existing configuration present. If you set this property to false, then datasource dev services will be disabled in all the cases. 
+   - quarkus.datasource.devservices.port: Optional fixed port the dev service will listen to. If not defined, the port will be chosen randomly.
 
 
 ### Impact on testsuites and testing automation:
