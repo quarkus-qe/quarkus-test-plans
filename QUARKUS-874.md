@@ -23,7 +23,7 @@ NOTE: We will prepare steps to get Windows 10 instance to be able to handle situ
    - New Jenkins Jobs
  - Combinations of Quarkus extensions Test Suite
    - In Github CI - for Pull Requests and Daily runs
- - OpenShift TesT Suite
+ - OpenShift Test Suite
    - New Jenkins Jobs on selected modules only (the ones using deployment strategies)
 
 ### Platform testing
