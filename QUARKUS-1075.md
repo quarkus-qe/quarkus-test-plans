@@ -12,6 +12,7 @@ https://quarkus.io/version/main/guides/rest-client-reactive
 ## Scope of the testing
 - Endpoints using basic HTTP methods: GET, POST, PUT, DELETE.
 - Endpoints with multipart data payload.
+- Execution model of RESTEasy Reactive.
 - REST Client Reactive
 - Traceable resources using `quarkus-smallrye-opentracing`.
 
@@ -33,6 +34,7 @@ There are ~3 new modules planned for QuarkusTS. Estimated increase in run time:
         - https://github.com/quarkus-qe/beefy-scenarios/tree/main/001-quarkus-getting-started-with-jaxrs
         - https://github.com/quarkus-qe/quarkus-openshift-test-suite/tree/main/http
     - Add reactive equivalents to the transferred scenarios in QuarkusTS.
+    - Add test case covering execution model (blocking / non-blocking) of RESTEasy Reactive (https://quarkus.io/guides/resteasy-reactive#execution-model-blocking-non-blocking) to a suitable reactive scenario.
 - Add relevant quickstarts to the acceptance set (https://gitlab.cee.redhat.com/quarkus-qe/jenkins-jobs/-/blob/main/jobs/rhbq/rhel8_jdk11_quickstarts_ts_jvm.groovy):
     - `getting-started-reactive`
     - `getting-started-reactive-crud`
