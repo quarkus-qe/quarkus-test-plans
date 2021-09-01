@@ -8,7 +8,16 @@ The goal is to verify OpenJDK 17 integration
 Test development will focus on  
  - New specifict scenarios will be created to cover the integration of new objects as “sealed” or “records” classes with several extensions as Hibernate or RESTEasy.
  - Current scenarios must work with Java 17
- - S2I (source to image) must works with Java 17  
+ - S2I (source to image) must works with Java 17
+ - JDK17 brings a lot of interesting [JEPs](http://openjdk.java.net/jeps/1)  implemented since JDK 11, and these ones are the selected ones to be covered by this test plan:
+    * [JEP 359, 384, 395: Records](https://openjdk.java.net/jeps/395)
+    * [JEP 325, 354, 361: Switch Expressions](https://openjdk.java.net/jeps/361)
+    * [JEP 353: Reimplement the Legacy Socket API](https://openjdk.java.net/jeps/353)
+    * [JEP 355, 368, 378: Text Blocks](https://openjdk.java.net/jeps/378)
+    * [JEP 305, 375, 394: Pattern Matching](https://openjdk.java.net/jeps/394)
+    * [JEP 358: Helpful NullPointerExceptions](https://openjdk.java.net/jeps/358)
+    * [JEP 360, 397, 409: Sealed Classes](https://openjdk.java.net/jeps/409)
+    * [JEP 371: Hidden Classes](https://openjdk.java.net/jeps/371)
 
 ### Impact on testsuites and testing automation:
  - Ensure this coverage works in JVM mode
