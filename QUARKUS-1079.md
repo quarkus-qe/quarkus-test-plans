@@ -11,7 +11,8 @@ This feature added previews of two extensions:
 
 Following test coverage should be implemented for Hibernate Reactive:
 - Usage of application.properties file for passing reactive-hibernate settings
-- Usage of import.sql
+- Usage of multiple import.sql files
+- Generating database schema from the code, updating and validating it
 - Smoke test(getting a working Mutiny session)
 - Retrieving Multi result from the DB
 - Retrieving Uni result(require a transformation) from the DB
@@ -27,6 +28,7 @@ Following test coverage should be implemented for Hibernate Reactive:
 - Eager and lazy fetches
 - Field-level lazy fetching(Hibernate team "doesn't encourage" using this feature, though)
 - Stateless sessions and their methods
+- Support for working with custom Vert.X instance
 
 Following test coverage should be implemented for Hibernate Reactive with Panache:
 - Active record pattern
