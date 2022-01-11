@@ -10,7 +10,7 @@ So, the goal is to verify proper functionality of the new Quarkus CLI tool.
 The Quarkus CLI is compatible with Maven, Gradle and Jbang tools, however RHBQ is only focused on Maven, so Gradle and Jbang will be covered as part of the test coverage in upstream.
 
 Test development will focus on the supported features scoped for RHBQ 2.2:
-- Create applications (with a set of extensions)
+- Create applications (with a set of extensions) and pointing to a specific platform
 - List extensions
 - Build existing Quarkus applications on JVM
 - Build existing Quarkus applications on Native (also using container configuration and builder images)
