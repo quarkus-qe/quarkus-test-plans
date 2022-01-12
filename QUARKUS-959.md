@@ -15,6 +15,7 @@ Test development will focus on
  - Extend messaging test cases with applications that spin up messaging dev services. Messaging services for which we have supported extensions:
    - AMQP: quarkus-smallrye-reactive-messaging-amq
    - Kafka: RedPanda
+   - Schema Registry: apicurio
  - Use the existing dev mode test coverage to ensure that running scenarios without dev services is still possible
  - Cover DEV UI
  - Quarkus app is waiting for the necessary services to start, developer must be informed about started services progress
@@ -23,6 +24,8 @@ Test development will focus on
    - quarkus.kafka.devservices.enabled: Kafka dev services is enabled by default unless kafka.bootstrap.servers is set or if all the Reactive Messaging Kafka channel are configured with a bootstrap.servers. If you set this property to false, then kafka dev services will be disabled in all the cases. 
    - quarkus.datasource.devservices.enabled: datasource dev services is enabled by default unless there is an existing configuration present. If you set this property to false, then datasource dev services will be disabled in all the cases. 
    - quarkus.datasource.devservices.port: Optional fixed port the dev service will listen to. If not defined, the port will be chosen randomly.
+   - quarkus.apicurio-registry.devservices.enabled: apicurio dev services is enabled by deafult unless mp.messaging.connector.smallrye-kafka.apicurio.registry.url is set or all the Reactive Messaging Kafka channels have the apicurio.registry.url attribute set.
+   - quarkus.apicurio-registry.devservices.port: By default, Dev Services for Apicurio Registry picks a random port and configures the application.
 
 
 ### Impact on testsuites and testing automation:
