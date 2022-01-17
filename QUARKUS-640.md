@@ -11,6 +11,7 @@ Following actions were taken to ensure test coverage and automation for reactive
  - Kafka Streams with JSON body messages and windowed.
  - Tested over Kafka Strimzi and RH AMQ Streams.
  - Platform OpenShift, Java 11.
+ - Apicurio serdes (serializers/deserializers)
 
 ### Impact on testsuites and testing automation:
  - OpenShift TS framework needs to be enhanced to support Kafka on OpenShift
