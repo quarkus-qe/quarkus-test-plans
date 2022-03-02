@@ -9,6 +9,7 @@ Use file name based on RFE id, for example QUARKUS-123.md
 ## Links to the resources
  - Provide links to the GH / JIRA issue
  - Provide links to the Chatroom / Forum design discussions
+ - Provide links to other related test plans if applicable 
 
 ## Scope of the testing
  - Define scope of the testing
