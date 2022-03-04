@@ -1,21 +1,22 @@
-# QUARKUS-1079 - Hibernate Reactive as Tech Preview
+# QUARKUS-1402 - Hibernate Reactive as Tech Preview
 
 JIRA link: https://issues.redhat.com/browse/QUARKUS-1079
+JIRA link: https://issues.redhat.com/browse/QUARKUS-1402
 
 For native mode similar test coverage as for JVM mode needs to be ensured.
 
 ## Scope of the testing
 This feature added previews of two extensions:
  - Hibernate Reactive
- - Hibernate Reactive with Panache
-
+ - Hibernate Reactive with Panache (is not supported yet)
+ 
 Following test coverage should be implemented for Hibernate Reactive:
 - Usage of application.properties file for passing reactive-hibernate settings
 - Usage of multiple import.sql files
 - Generating database schema from the code, updating and validating it
-- Smoke test(getting a working Mutiny session)
+- Smoke test (getting a working Mutiny session)
 - Retrieving Multi result from the DB
-- Retrieving Uni result(require a transformation) from the DB
+- Retrieving Uni result (require a transformation) from the DB
 - Usage of DB-generated ids and ids generated with Java code(via ReactiveIdentifierGenerator)
 - Validation of values
 - Attribute converters
@@ -41,7 +42,7 @@ Following test coverage should be implemented for Hibernate Reactive with Panach
 - Transactions
 - Id generation
 
-All tests should run for PostgreSQL, MySQL, DB2, MS SQL and Oracle SQL.
+All tests should run for PostgreSQL, MySQL, DB2, MS SQL and Oracle SQL. Oracle and DB2 are not officially supported, so failures there should not be blockers.
 
 ### Impact on testsuites and testing automation:
  - Ensure this coverage works both in JVM and NATIVE mode
@@ -70,7 +71,8 @@ This step should ensure:
  - Ensure platform specific features or components have appropriate test coverage
 
 ## Advanced topics
-    - Locking
-    - Multitenancy
-    - Cache
-    - Tuning and perfomance
+- Locking
+- Multitenancy
+- Cache
+- Tuning and perfomance
+- Hibernate Reactive with Panache (when it's ready)
