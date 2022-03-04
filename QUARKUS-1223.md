@@ -1,4 +1,4 @@
-# Hibernate Search product support
+# QUARKUS-1223 - Hibernate Search product support
 
 JIRA link: https://issues.redhat.com/browse/QUARKUS-1223
 
