@@ -1,4 +1,4 @@
-# QUARKUS-1075 Overall improvements around RESTEasy Reactive
+# QUARKUS-1075 - Overall improvements around RESTEasy Reactive
 
 JIRA link: https://issues.redhat.com/browse/QUARKUS-1075
 
