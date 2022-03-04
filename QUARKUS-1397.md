@@ -1,4 +1,4 @@
-# Quarkus-1397 - Dev preview for Java 17 in Native mode
+# QUARKUS-1397 - Dev preview for Java 17 in Native mode
 
 JIRA link: https://issues.redhat.com/browse/QUARKUS-1397
 
