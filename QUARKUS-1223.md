@@ -56,11 +56,15 @@ What is missing:
 ## Automated test development
 - Enable relevant Quickstart module in Quickstart acceptance job: https://github.com/quarkusio/quarkus-quickstarts/tree/main/hibernate-search-orm-elasticsearch-quickstart.
 - Implement new test scenario in QE test suite (include OpenShift tests) combining:
-  - Multiple persistence units, outbox polling and multi-tenancy (separate schema).
+  - Multiple persistence units and multi-tenancy (separate schema / databases).
+  - Selection of supported databases as `jdbc-postgresql` and `jdbc-mysql`.
   - RESTEasy Reactive.
-  - Selection of other supported databases: `jdbc-mariadb`, `jdbc-oracle`.
 
 ## Impact on test suites and test environment
 - No modifications in test environment expected.
 - 1 new module in QE test suite: 2 / 5 / 5 / 10 minutes increase (JVM / native / OpenShift / OS native).
 - 1 module added to Quickstarts acceptance job: ~1 minute increase.
+
+## Advanced topics for test development
+
+Extends current scenario to other supported datasources. 
