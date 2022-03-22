@@ -23,9 +23,10 @@ These aspects are not covered by this RFE.
 - Automating base checks, more scenarios to be based on CLI use-cases
 
 ### Impact on testsuites and testing automation:
-- quarkus-test-framework needs to be extended to cover execution of `mvn` command
-- quarkus-test-framework needs to be extended to cover example for `mvn` command execution
-- quarkus-test-suite needs to be extended to cover tests for `quarkus:info` and `quarkus:update` availability 
+- quarkus-startstop test suite needs to be extended to cover execution of `mvn quarkus:abc` goals
+- quarkus-startstop test suite needs to be extended to cover tests for `quarkus:info` and `quarkus:update` availability
+- quarkus-test-framework and quarkus-test-suite are not desired test development target as they are focused on running applications
+- quarkus-test-suite will be used for test development once Quarkus CLI gets enhanced with `info` and `update` commands
 
 ### Impact on resources:
 - No additional requirements for resources in lab
@@ -38,8 +39,7 @@ Following actions were taken to ensure familiarity:
 
 ## Automated test development
 This step should ensure:
-- quarkus-test-framework update
-- test development in quarkus-test-suite
+- quarkus-startstop test suite based test development
 
 ## Advanced topics for test development
 N/A
