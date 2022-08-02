@@ -67,6 +67,16 @@ Strimzi Kafka running over SSL or using SASL authN is not working over FIPS
 
 Issue Ref: https://issues.redhat.com/browse/QUARKUS-1769
 
+### Non-FIPS vs. FIPS coverage details
+
+- Date 2022-07-29
+- Quarkus: 1.7.6.CR1
+
+FIPS total amount of tests:     1,830
+Non-FIPS total amount of tests: 2,276
+
+Quarkus test suite with FIPS enabled has 20% less coverage than the same test suite with Non-FIPS. 
+
 ## Contacts
 
 * Tester: Pablo Gonzalez <pagonzal@redhat.com>
