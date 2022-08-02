@@ -70,7 +70,7 @@ Issue Ref: https://issues.redhat.com/browse/QUARKUS-1769
 ### Non-FIPS vs. FIPS coverage details
 
 - Date 2022-07-29
-- Quarkus: 1.7.6.CR1
+- Quarkus: 2.7.6.CR1
 
 FIPS total amount of tests:     1,830
 Non-FIPS total amount of tests: 2,276
