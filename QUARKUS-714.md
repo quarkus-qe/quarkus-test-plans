@@ -13,7 +13,7 @@ Currently supported Spring Data repositories:
  - JpaRepository
 
  Currently supported annotation properties:
-  - exposed, path, collectionResourceRel
+  - exported, path, collectionResourceRel
 
 Details about different aspects regarding Spring Data REST usage can be found in https://www.baeldung.com/spring-data-rest-intro and https://github.com/eugenp/tutorials/tree/master/spring-data-rest  
 These resources will be processed and further interpreted for Quarkus based usage where possible. Switch to Quarkus is expected to be smooth.
