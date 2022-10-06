@@ -3,14 +3,15 @@
 Jira: https://issues.redhat.com/browse/QUARKUS-2284
 
 This feature is about productization of Quarkus Funqy and Quarkus Funqy Knative Events Binding extensions needed by OpenShift Serverless Functions.
-We should create multiple Quarkus functions deployed with OpenShift CLI as a single application.
+We should create multiple Quarkus functions deployed with Quarkus OpenShift extension as a single application.
+Broker and triggers are going to be created and deleted with Knative Client (`kn`) and [Knative Java Client](https://github.com/fabric8io/kubernetes-client).
 Functions should be used with Knative Eventing, test both native and JVM mode and verify Funqy features.
 Before we can do that, we need to install Knative Eventing with our Quarkus QE Framework as we want the Test Suite to work without any prerequisites and the operator starts several pods that would keep running.
 
 ## Scope of the testing
 
 Tests should verify:
-- Quarkus function deployment using YAML file and OpenShift CLI (`oc`)
+- Quarkus function deployment using Quarkus OpenShift extension
 - Invoking Quarkus functions:
   - JSON object in the body of the request (HTTP POST request)
   - Data in the query string (HTTP GET request)
@@ -51,11 +52,10 @@ Tests should verify:
 ### Impact on resources:
 
 - Impact on lab capacity is one medium size executor
-- Required additional time for the test execution should be up to 14 minutes. Roughly we expect 5.5 min. for JVM mode and 8.5 min. for native mode:
-  - ~ 2 minutes to install Knative Eventing
-  - ~ 30 seconds to create broker and triggers
-  - ~ 2/5 minutes to build and deploy a function in JVM/native mode
-  - ~ 1 minute for uninstalling Knative Eventing
+- Required additional time for the test execution should be up to 10 minutes. Roughly we expect 3 min. for JVM mode and 8 min. for native mode:
+  - ~ 1 minute to create broker and triggers
+  - ~ 2/7 minutes to build and deploy a function in JVM/native mode
+- Knative Eventing API must be installed on our OpenShift clusters as shared namespace (`knative-eventing`) is used by all tests
 
 ## Getting familiar with the feature
 
@@ -66,6 +66,8 @@ Following actions were taken to ensure familiarity:
 ## Advanced topics for test development
 
 - Interacting with a serverless application using HTTP2 and gRPC
+- Quarkus function deployment using 'kn func' plugin
+- Quarkus function deployment using OpenShift CLI (`oc`) and YAML templates
 
 ## Contacts
 
