@@ -20,7 +20,7 @@ Test development will focus on
   
 ### Impact on testsuites and testing automation:
 
-- GraalVM/Mandrel JDK17 native builder images are going to be used to compile Quarkus native application regardless of whether the application runs on java 11 or 17
+- GraalVM/Mandrel JDK17 native builder images are going to be used to compile Quarkus native application
 - Native daily GitHub builds will cover GraalVM and Mandrel community JDK17 native builder images
 -  `ubi-quarkus-native-image:22.2-java17` and `ubi-quarkus-mandrel:22.2-java17` now
 -  targeting `ubi-quarkus-native-image:22.3-java17` and `ubi-quarkus-mandrel:22.3-java17` (when available) for Quarkus 2.13.z releases.
