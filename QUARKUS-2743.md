@@ -1,8 +1,11 @@
 # QUARKUS-2743 - Consuming multiple media types from a resource method does not work
 
 JIRA: https://issues.redhat.com/browse/QUARKUS-2743
+
 Quarkus documentation: https://quarkus.io/guides/resteasy-reactive#negotiation
+
 PR: https://github.com/quarkusio/quarkus/pull/29734
+
 Upstream issue: https://github.com/quarkusio/quarkus/issues/29732
 
 Consuming multiple media types from a resource method works in Quarkus 2.13.6.
