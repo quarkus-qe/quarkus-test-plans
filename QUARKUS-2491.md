@@ -1,8 +1,11 @@
 # QUARKUS-2491 OIDC - Support for Proof Of Key for Code Exchange (PKCE)
 
 JIRA link: https://issues.redhat.com/browse/QUARKUS-2491
+
 Quarkus documentation: https://quarkus.io/guides/security-openid-connect-web-authentication#proof-of-key-for-code-exchange-pkce
+
 PR: https://github.com/quarkusio/quarkus/pull/23423
+
 Upstream issue: https://github.com/quarkusio/quarkus/issues/12856
 
 Support for Proof Of Key for Code Exchange (PKCE), that minimizes the risk of the authorization code interception, has been added in Quarkus 2.8.
