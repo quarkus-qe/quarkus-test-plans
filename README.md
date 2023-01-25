@@ -13,6 +13,14 @@ Use file name based on RFE id, for example QUARKUS-123.md
 
 ## Scope of the testing
  - Define scope of the testing
+ - For each feature / Quarkus extension, assess existing and consider implementing new integration tests for areas (when applicable):
+   - Logging
+   - Tracing
+   - Metrics
+   - Security
+   - OpenAPI
+   - Data sources
+   - Qute
  - Analyze possible impact on Quarkus itself - e.g performance, compatibility
  - Determine impact on test suites - e.g. new test suite, increased complexity of existing test suite, maintenance burden
  - Determine impact on QE infrastructure - e.g. increased complexity of existing automation, maintenance burden, need for new external resources
