@@ -14,15 +14,15 @@ Test development will focus on
 - Quarkus JDBC transactions based on lambda approach
 - Verify commons transactions states as "begin", "commit" and "rollback"
 - Verify classic and reactive flavors
-- Verify several supported semantics such as "DISALLOW_EXISTING", "JOIN_EXISTING", "REQUIRE_NEW", "SUSPEND_EXISTING"
+- The following databased will be covered: Oracle, Mysql, MariaDB, Mssql, Postgresql
 
 ### Impact on test suites and testing automation
 We are going to create two new modules (classic and reactive) under SQL/DB folder, in order to develop new JDBC transaction scenarios. 
 The main idea is to develop a "real scenario" where the transactions are handler in a service layer, rather than in entity level. 
 This new module is going to increase the compile time, especially in native mode, and is important to run the scenario in 
-all the platforms, OCP, Baremetal and native mode. I would say that each native compilation could takes about 3 min and then 
+all the platforms, OCP, Baremetal (JVM and native mode). I would say that each native compilation could takes about 3 min and then 
 1 extra minute in order to run the scenario itself. Overall my prediction is that the total amount of time required to run 
-transaction API scenarios is about 15 min.
+transaction API scenarios is about 30 min.
 
 ## Getting familiar with the feature
 
