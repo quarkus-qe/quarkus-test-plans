@@ -4,14 +4,15 @@ JIRA:
 
 Quarkus documentation:
 
-### Checklist of areas related to the topic
+### Reminder for considerable topics
 
-Select all applicable areas that have been considered in this test plan:
+ - [ ] Make sure you have considered the following areas when preparing the test plan:
 
-- [ ] Logging
-- [ ] Tracing
-- [ ] Metrics
-- [ ] Security
-- [ ] OpenAPI
-- [ ] Data sources
-- [ ] Qute
+   - Logging
+   - Tracing
+   - Metrics
+   - Security
+   - OpenAPI
+   - Data sources
+   - Frontend
+   - Qute
