@@ -9,15 +9,20 @@ Documentation:
 [Quarkus JTA](https://quarkus.io/guides/transaction#programmatic-approach)
 
 ## Scope of the testing
+
 Test development will focus on
 - Quarkus JDBC transactions based on programmatic approach
 - Quarkus JDBC transactions based on lambda approach
 - Verify commons transactions states as "begin", "commit" and "rollback"
-- Verify classic and reactive flavors
-- The following databased will be covered: Oracle, Mysql, MariaDB, Mssql, Postgresql
+- Reactive flavor is out of scope, currently only classic approach is supported
+- The following databased will be covered: Oracle, MySQL, MariaDB, Mssql, PostgreSQL
+- Areas like OpenAPI, Tracing and Metrics were considered when preparing the test plan
+  - Closer integration for Tracing and Metrics topic will be evaluated and brought to the development team
+  - TD will cover custom metric handled by the application code and ensure true transactional behaviour - e.g. rollback
 
 ### Impact on test suites and testing automation
-We are going to create two new modules (classic and reactive) under SQL/DB folder, in order to develop new JDBC transaction scenarios. 
+
+We are going to create a new module under SQL/DB folder, in order to develop new JDBC transaction scenarios. 
 The main idea is to develop a "real scenario" where the transactions are handler in a service layer, rather than in entity level. 
 This new module is going to increase the compile time, especially in native mode, and is important to run the scenario in 
 all the platforms, OCP, Baremetal (JVM and native mode). I would say that each native compilation could takes about 3 min and then 
