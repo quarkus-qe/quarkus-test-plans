@@ -100,7 +100,7 @@ and upstream integration modules.
 
 ## Impact on test suites and test environment
 
-Beefy Scenarios should cover newly introduced configuration properties that enforces legacy behavior and provides
+Quarkus Test Suite should cover newly introduced configuration properties that enforces legacy behavior and provides
 smooth migration.
 
 The SameSite cookies added by Jakarta REST Services 3.1 will require one unit test with multiple HTTP requests.
