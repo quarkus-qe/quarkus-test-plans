@@ -26,7 +26,7 @@ The following non-application endpoints will be covered:
 quarkus.management.enabled=false # or without this option at all
 ```
 
-Valid request example: `http://localhost:8080/q/health
+Valid request example: `http://localhost:8080/q/health`
 
 * Default config (could be omitted from native tests to save time):
 
