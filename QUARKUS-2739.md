@@ -20,6 +20,7 @@ Tests should verify:
     - Mssql
     - Oracle
 - JVM and Native mode
+- Schema creation control would need to be configurable; log/generate the SQL scripts related to the missing required tables
 - OpenShift integration (Operator is not planned for the initial release)
 - Verify the documentation related to "crash recovery procedure"
 
