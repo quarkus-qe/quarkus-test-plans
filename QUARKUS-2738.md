@@ -62,7 +62,7 @@ Valid request example: `http://localhost:9000/management/health` and `http://loc
 NB: All options (except `quarkus.management.enabled` are build time, to verify that we should not put them into `application.properties`), but use overload functionality, from the framework(`withProperties`/`withProperty` methods)
 ### Impact on testsuites and testing automation:
  - Ensure this coverage works on Openshift (JVM and NATIVE mode)
- - New `quarkus.management.enabled` option os processed in a build time, we should add it as exception in the test framework
+ - New `quarkus.management.enabled` option is processed in a build time, we should add it as exception in the test framework
  - New tests will be added to `properties`,`monitoring/`, `http-advanced` and `http-advanced-reactive` modules.
 
 
