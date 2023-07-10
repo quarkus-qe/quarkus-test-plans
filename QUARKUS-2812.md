@@ -20,6 +20,12 @@ Build failure prevents the metrics to be processed.
 Failure in the metrics collection (i.e. a bug in Quarkus) causes the build to fail.
 Failure in the metrics sendoff (network issue, endpoint unavailability, ...) does NOT cause the build to fail.
 
+Metrics are off by default. During the first run of an application in dev mode, a prompt is displayed, which allows user
+to activate the feature. There are 3 defined actions:
+- Enable.
+- Disable.
+- No action - the prompt times out after 10 seconds and will be displayed again during next dev mode run.
+
 ## Scope of testing
 
 What data is collected in what event.
@@ -39,6 +45,8 @@ Verify the data being logged during application build.
 - Do not query the remote 3rd party service, which could prove troublesome.
 
 Verify, that no sensitive data / personal identifiable information is being shared (e.g. IP address).
+
+Verify the prompt to enable the metrics in the dev mode. Verify that the feature is opt-in.
 
 Verify all the mechanisms to disable the metrics work properly.
 - Quarkus config property.
@@ -84,3 +92,6 @@ Number of new scenarios:
   - ~1 minute of build time each
 - 2 in native mode: extensionsSetA (small), extensionsSetB (large).
   - ~5 minutes of build time each.
+
+By default, the prompt in dev mode should be disabled in all dev-mode tests in all test suites via the Quarkus config
+property.
