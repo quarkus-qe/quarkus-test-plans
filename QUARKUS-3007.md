@@ -84,6 +84,13 @@ Product testing:
   * Quarkus Quickstarts
     * JVM mode - 1x large aarch64 machine fom Beaker per tested JDK, 1 hour execution time
     * native mode - 1x xlarge aarch64 machine form Beaker, 2 hours execution time
+* Estimation of increase in time requirements
+  * For machine time, parallelism in execution should be established. The spin up of beaker machines does not take that
+    long in trials, but we don't have any significantly large sample size yet to say how it will look in long term.
+  * For people/investigation time, this depends on how different JDK and test services act on aarch64. So far, 
+    significant functional bugs were not present on aarch64. All the issues historically were related to either missing
+    test services or missing productized dependencies. For native applications, we have no baseline to base our
+    estimates upon.
 
 ## Other considerations
 * We need to consider how to handle the sprawling matrix. Currently, there are following axes in the matrix:
