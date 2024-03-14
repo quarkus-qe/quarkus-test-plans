@@ -15,9 +15,8 @@ JIRA link: https://issues.redhat.com/browse/QUARKUS-2994
 * Temurin JVM 21 and OpenJDK 21 need to be added as JDKs to Quarkus QE Jenkins
 * Temurin JVM 21 and OpenJDK 21 have to be added as JVMs to Polarion
 * Bare metal Linux jobs in extended platform testing need to be extended to run with both Temurin 21 and OpenJDK 21.
-  * This affects JVM mode only.
 * Bare metal Windows jobs (JVM on AWS) in extended platform testing need to be extended to run with Temurin 21.
-* OpenShift JVM job needs to use OpenJDK 21 (together with existing 17) instead of OpenJDK 11
+* OpenShift jobs need to use OpenJDK 21 (together with existing 17) instead of OpenJDK 11
   * We also should use S2I build image based on JDK 21 there
 * Two quickstart jobs (Linux and Windows) should be added/repurposed from 11 in general or extended pipeline
 * Add a job for running on ARM
