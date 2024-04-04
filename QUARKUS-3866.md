@@ -7,8 +7,8 @@
 ## Scope of the testing
 - Exploratory testing of the feature
 - Verify dev mode support for the extension
-- Test coverage in QQE TS not only using H2 and PostgreSQL databases for the identity store
-- Test coverage in QQE TS using custom password providers with different hashing algorithms
+- Test coverage in QQE TS for MariaDB, MySQL and Oracle
+- Test coverage in QQE TS using custom password providers with SHA256, SHA512 and MD5 algorithms
 
 ## Getting familiar with the feature
 Following actions were taken to ensure familiarity:
@@ -36,7 +36,7 @@ Following actions were taken to ensure familiarity:
 - New tests will be added inside [security](https://github.com/quarkus-qe/quarkus-test-suite/tree/main/security) directory in QQE TS.
 
 ### Impact on resources
-- There will be longer tests execution for JVM and native runs of QE TS.
+- 1 new module in QE Test Suite: 2 / 11 minutes increase (JVM / native).
 
 ## Contacts
 - Tester: Georgii Troitskii <gtroitsk@redhat.com>
