@@ -27,7 +27,7 @@ On the other hand, also other modules use ```quarkus-opentelemetry``` dependency
 ### Impact on testsuites and testing automation:
 Some new tests will be added inside monitoring-opentelemetry, messaging-amqp-reactive modules.
 
-Ensure the test cases are running in both JVM and OpenShift environments.
+Ensure the test cases are running on JVM in both baremetal and OpenShift environments.
 
 ## Getting familiar with the feature
 To become familiar with the feature, the following actions were taken:
