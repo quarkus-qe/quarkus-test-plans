@@ -20,14 +20,12 @@ On the other hand, also other modules use ```quarkus-opentelemetry``` dependency
 
 #### Test scenarios
 - Disable Opentelemetry extensions to ensure the application behaves as expected without tracing enabled.
-- Testing scenario with additional configuration options such as *Id Generator, Propagators, Resource, Sampler configuration*.
+- Testing scenario with additional configuration options such as *custom Id Generator, Propagators, Resource, Sampler configuration*.
 - Test with other exporters such a Zipkin.
-- Integration tests to ensure proper tracing is enabled and functioning correctly in other core Quarkus extensions such as ```quarkus-smallrye-reactive-messaging-amqp```.
-- Include gRPC reactive coverage to opentelemetry as we did with [opentracing](https://github.com/quarkus-qe/quarkus-test-suite/tree/main/monitoring/opentracing-reactive-grpc) (recently dropped).
+- Integration tests to ensure proper tracing is enabled and functioning correctly with other core Quarkus extensions such as ```quarkus-smallrye-reactive-messaging-amqp```.
 
 ### Impact on testsuites and testing automation:
-Some new tests will be added inside monitoring-opentelemetry modules, messaging-amqp-reactive.
-On the other hand, a new module **open-telemetry-reactive-grpc** will be created, producing some time increase.
+Some new tests will be added inside monitoring-opentelemetry, messaging-amqp-reactive modules.
 
 Ensure the test cases are running in both JVM and OpenShift environments.
 
