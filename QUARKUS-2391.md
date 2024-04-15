@@ -24,6 +24,7 @@ On the other hand, also other modules use ```quarkus-opentelemetry``` dependency
 - Test with other exporters such a Zipkin.
 - Integration tests to ensure proper tracing is enabled and functioning correctly with other core Quarkus extensions such as ```quarkus-smallrye-reactive-messaging-amqp```.
 - Testing Opentelemetry in dev mode once this issue is resolved:  [Opentelemetry has no Dev Service in dev mode](https://issues.redhat.com/browse/QUARKUS-4186)
+- Testing of exportation of security events as Opentelemetry Events, stored inside spans.
 
 ### Impact on testsuites and testing automation:
 Some new tests will be added inside monitoring-opentelemetry, messaging-amqp-reactive modules.
