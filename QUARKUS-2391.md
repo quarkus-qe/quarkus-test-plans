@@ -21,7 +21,6 @@ On the other hand, also other modules use ```quarkus-opentelemetry``` dependency
 #### Test scenarios
 - Disable Opentelemetry extensions to ensure the application behaves as expected without tracing enabled.
 - Testing scenario with additional configuration options such as *custom Id Generator, Propagators, Resource, Sampler configuration*.
-- Test with other exporters such a Zipkin.
 - Integration tests to ensure proper tracing is enabled and functioning correctly with other core Quarkus extensions such as ```quarkus-smallrye-reactive-messaging-amqp```.
 - Testing Opentelemetry in dev mode once this issue is resolved:  [Opentelemetry has no Dev Service in dev mode](https://issues.redhat.com/browse/QUARKUS-4186)
 - Testing of exportation of security events as Opentelemetry Events, stored inside spans.
