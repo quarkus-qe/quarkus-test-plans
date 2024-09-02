@@ -15,7 +15,7 @@ These will be enhanced to support testing of this issue.
 This will require new test class, which will lead to new application build during testing
 
 ## Impact on resources
-Additional ~1.5 minutes of test execution time.
+Additional ~1.5 minutes of test execution time on JVM, 5 minutes on native.
 
 # Links
 Issue link: https://github.com/smallrye/smallrye-reactive-messaging/issues/2473
