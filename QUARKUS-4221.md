@@ -6,10 +6,7 @@ PR: https://github.com/quarkus-qe/quarkus-test-suite/pull/2003
 ## Scope of the testing
 ### What to test
 
-The test coverage will be verified for environments: JVM for Baremetal.
-
- It won't be tested on Native because this support was requested by the Keycloak team, and they explicitly stated (in the comments of the Jira task) that they don't work with native executables,
-so it's not needed at the moment.
+The test coverage will be verified with JVM mode and native mode on Baremetal.
 
 Openshift excluded due to the impracticality of running command-line applications with CLI arguments in these environment.
 
@@ -85,7 +82,8 @@ the warning in the guide: [simple-command-line-application](https://quarkus.io/g
    New tests will be created in a new module quarkus-picocli.
 
 ### Impact on resources:
-  After the new test classes introduced in quarkus-picocli on JVM will be increased 6.381 seconds.
+  After the new test classes introduced in quarkus-picocli on JVM  baremetal will be increased 6.381 seconds,
+  and on Native baremetal 06:43 min.
 
 ## Getting familiar with the feature
 
