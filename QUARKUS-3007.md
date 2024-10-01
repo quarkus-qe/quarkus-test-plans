@@ -7,34 +7,29 @@ for x86-64 architecture.
 
 For the purposes of planning, the following tasks therefore need to be executed (ordered by priority):
 * Same test coverage and certification matrix on OCP on aarch64 for both JVM and native mode as on OCP on x86-64 (see
-  https://issues.redhat.com/browse/QUARKUS-3446)
+  [QUARKUS-3446](QUARKUS-3446.md))
 * Certification of RHBQ native mode on OCP on aarch64
-* Certification of RHBQ in both JVM and native mode in the bare metal scenarios on aarch64
+* Certification of RHBQ in both JVM and native mode in the bare metal scenarios on aarch64 
+  (see [QUARKUS-4942](QUARKUS-4942.md))
 
 ## Scope of the testing
 
 ### General
-* Catch-up on the test coverage on OCP to be same for aarch64 as it is for x86-64
-  * Enabling Serverless tests in `openshift-arm` profile once RH Serverless supports aarch64
-  * Running test services that do not yet support aarch64 in a side OpenShift cluster running on x86-64
-    * This pertains to units to tens of tests across multiple modules 
+* Test coverage on OCP should be same for aarch64 as it is for x86-64
+  * Tests disabled in `aarch64` profile due to missing test services on that architecture should be re-enabled
 * Certification of RHBQ native mode on OCP on aarch64
   * The full native OpenShift coverage will have to be ran in native mode with the Mandrel native builder container
 * Certification of both the JVM and native modes in bare metal scenarios will require all the aspects to be tested
   * we support two JDK versions for JVM mode and one JDK version for native mode per release stream
-  * start-stop TS with RHBQ code starters
-  * start-stop special characters TS
-  * bare metal test suite
-  * Quarkus Quickstarts
+  * bare metal test suite and Quarkus Quickstarts are priority
+  * `startstop-ts-code-quarkus`, `startstop-ts-special-chars` are nice to have
 
 ### Impact on test suites and testing automation
 * Catch-up on the test coverage on OCP to be same for aarch64 as it is for x86-64
   * This means that the aarch64 OCP testing pipeline would require an additional x86-64 cluster to be deployed in AWS
     and test services be prepared before the test execution by the test pipeline. The other part of this is that the
     tests that currently use test services not supported on aarch64 would be moved to standalone test suite module, only
-    executed in `openshift-arm` profile
-  * The other aspect is testing on EUS OpenShift. A job executing the OpenShift interoperability modules on a matrix of 
-    JDK version and OpenShift version should be implemented.
+    executed in `aarch64` profile
   * We will also need to implement periodic runs of OpenShift test suite in JVM mode with Quarkus built from main branch
     on aarch64. 
 * Certification of RHBQ native mode on OCP on aarch64
@@ -52,10 +47,8 @@ For the purposes of planning, the following tasks therefore need to be executed 
     * start-stop special characters TS (`startstop-ts-special-chars`)
     * bare metal test suite
     * Quarkus Quickstarts
-  * We will need to the upstream CI to include aarch64 as a regular platform for their CI.
-    * If this is not implemented, we are in risk of catching bugs way too late in release (with our engineering and 
-      candidate releases being produced only after upstream release, we would have no way of knowing that upstream stays
-      aarch64 certified).
+* We will need to run the aarch64 coverage in our periodic builds as running all the coverage planned in previous 
+  bullets in candidate releases the first time is too late to catch bugs in the schedule.
 
 Note: Once we have the jobs for product testing for OCP on aarch64 in both JVM and native mode, we will have three jobs
 (in JVM mode, for JDK 17 and 21, and in native mode, for whichever version Mandrel supports), and each of them will be 
@@ -65,34 +58,28 @@ execution. We should consider moving the jobs to the same pipeline, managing its
 ### Impact on resources
 Product testing:
 * Catch-up on the test coverage on OCP to be same for aarch64 as it is for x86-64
-  * One additional OCP cluster for test services in AWS: 6x xlarge x86-64 machines in AWS
-  * EUS OCP in AWS: 6x xlarge Graviton machines, 4x large executors in Jenkins for each cell of JDK/OCP version matrix
+  * One OCP cluster for test services in AWS: 6x xlarge x86-64 machines in AWS
 * Certification of RHBQ native mode on OCP on aarch64
   * medium executor for orchestration
-  * 8x xlarge executors added from Beaker, 2 hours execution time
+  * 9x xlarge executors added from Beaker, 2 hours execution time
   * ideally, we will be using the same clusters as the other OCP jobs do, but we need at least
     * 1x test cluster - 6x xlarge Graviton machines in AWS
     * 1x test service cluster - 6x xlarge x86-64 machines in AWS
 * Certification of both the JVM and native modes in bare metal scenarios on aarch64
-  * `startstop-ts-code-quarkus` - 1x large aarch64 machine from Beaker per tested JDK, minutes to tens of minutes 
-    execution time
-  * `startstop-ts-special-chars` - 1x large aarch64 machine from Beakerper tested JDK, minutes to tens of minutes 
-    execution time
   * bare metal test suite
-    * JVM mode - 8x large aarch64 machine from Beaker per tested JDK, 1-2 hours execution time
-    * native mode - 8x xlarge aarch64 machine from Beaker, 2 hours execution time
+    * JVM mode - 9x large aarch64 machine from Beaker per tested JDK, 1-2 hours execution time
+    * native mode - 9x xlarge aarch64 machine from Beaker, 2 hours execution time
   * Quarkus Quickstarts
     * JVM mode - 1x large aarch64 machine fom Beaker per tested JDK, 1 hour execution time
-    * native mode - 1x xlarge aarch64 machine form Beaker, 2 hours execution time
+    * native mode - 1x xlarge aarch64 machine form Beaker, 5 hours execution time
 * Estimation of increase in time requirements
-  * For machine time, parallelism in execution should be established. The spin up of beaker machines does not take that
-    long in trials, but we don't have any significantly large sample size yet to say how it will look in long term.
-  * For people/investigation time, this depends on how different JDK and test services act on aarch64. So far, 
-    significant functional bugs were not present on aarch64. All the issues historically were related to either missing
-    test services or missing productized dependencies. For native applications, we have no baseline to base our
-    estimates upon.
+  * Beaker and OCP provisioning run in parallel and complete within 2 hours.
+  * Test jobs execute in parallel with x86-64 coverage on different machine quota.
+  * Running in parallel with x86-64 coverage, the pipeline should finish within 10 hours.
 
 ## Other considerations
+* We should enable our other functional and structural coverage, but quickstarts and bare metal test suite are priority. 
+  * `startstop-ts-code-quarkus`, `startstop-ts-special-chars`
 * We need to consider how to handle the sprawling matrix. Currently, there are following axes in the matrix:
   * mode (JVM, native)
   * JDK (JDK17, JDK21)
