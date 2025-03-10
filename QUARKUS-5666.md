@@ -11,7 +11,7 @@
 The goal of this testing is to ensure that this new feature introduced into Quarkus TLS Registry can successfully handle encrypted PKCS#8 (PEM) Keys.
 The tests validate both server and client side functionalities when using encrypted PEM certificates.
 
-**Note** : The tests won't cover encrypted PEM in a  FIPS-enabled environment.This limitation is due to the lack of support for required encryption/decryption algorithms
+**Note** : The tests won't cover encrypted PEM in a FIPS-enabled environment. This limitation is due to the lack of support for required encryption/decryption algorithms
 (specifically AES-128-CBC) by FIPS-compliant providers.
 Attempting to use encrypted PEM certificates under FIPS results in a NullPointerException error due to null algorithm parameters.
 This is a known limitation at the Quarkus and SmallRye level. An enhancement issue has been created in Quarkus
