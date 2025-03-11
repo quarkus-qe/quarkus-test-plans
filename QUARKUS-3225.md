@@ -63,6 +63,15 @@ The FIPS-enabled and FIPS-disabled environments baremetal tests coverage run wit
   - upstream issue: https://github.com/quarkusio/quarkus/issues/40813
   - product ticket: https://issues.redhat.com/browse/QUARKUS-4330
   - 8 disabled tests for OpenJDK 17: https://github.com/quarkus-qe/quarkus-test-suite/pull/1807
+- TLS Support Encrypted PKCS#8 PEM files is not supported with FIPS-enabled environment
+  - upstream issue: https://github.com/quarkusio/quarkus/issues/46696
+  - product ticket: https://issues.redhat.com/browse/QUARKUS-5666
+  - disabled tests:
+    - https://github.com/quarkus-qe/quarkus-test-suite/blob/main/http/grpc/src/test/java/io/quarkus/ts/http/grpc/GrpcMtlsEncryptedPemTlsRegistryIT.java
+    - https://github.com/quarkus-qe/quarkus-test-suite/blob/main/security/https/src/test/java/io/quarkus/ts/security/https/secured/HttpsEncryptedPemIT.java
+    - https://github.com/quarkus-qe/quarkus-test-suite/blob/main/security/https/src/test/java/io/quarkus/ts/security/https/secured/TlsRegistryCertificateReloadingIT.java
+    - https://github.com/quarkus-qe/quarkus-test-suite/blob/main/security/https/src/test/java/io/quarkus/ts/security/https/secured/TlsRegistryDecryptedKeyIT.java
+
 
 Fixed product tickets:
 
