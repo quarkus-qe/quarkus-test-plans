@@ -9,7 +9,7 @@ Upstream PRs:
 
 ## Scope of the testing
 QE team will:
-- verify MicroProfile Telemetry 2.0 compliance was achieved
+- verify MicroProfile Telemetry 2.0 TCK (org.eclipse.microprofile.telemetry:microprofile-telemetry-metrics-tck) are passing
 - ensure there are mechanisms in place to detect regressions through MicroProfile Telemetry 2.0 TCK
 - ensure https://quarkus.io/standards/ page reflects compliance with MicroProfile Telemetry 2.0
 - add test coverage in QE TS for sanity checks
