@@ -1,4 +1,4 @@
-# QQE-1450 Websocket next
+# QUARKUS-5870 Websocket next
 
 ## Scope of testing
 Verify quarkus' websocket-next extension.
