@@ -1,4 +1,4 @@
-# QUARKUS-4573 - Enable Quarkus QE baremetal test execution of QuarkusIO/Quarkus project test coverage against RHBQ builds
+# QUARKUS-5186 - Enable Quarkus QE baremetal test execution of QuarkusIO/Quarkus project test coverage against RHBQ builds
 
 JIRA: https://issues.redhat.com/browse/QUARKUS-5186
 
