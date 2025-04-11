@@ -36,7 +36,7 @@ QE TS already has tests for quarkus-websocket-next introduced by QUARKUS-5870.md
 New classes and tests will be created into 'quarkus-test-suite/websockets/websocket-next-oidc'.
 
 ## Impact on resources
-Tests will be executed on both JVM and native and on both baremetal and OCP.
+Tests will be executed on JVM and native on baremetal.
 Expected additional execution time in minutes for each case.
 
 ## Contacts
