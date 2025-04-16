@@ -22,10 +22,10 @@ This feature is specifically Micrometer integration part of the new WebSockets N
   * connections closed counter
 
 ### General
-* An integration test will be added to Quarkus QE test suite's `monitoring`
-  module, executed in both JVM and native mode. This test will verify that 
-  the following metrics are correctly produced for both the websockets next 
-  client and server:
+* An integration test will be added to Quarkus QE test suite's 
+ `websockets/websocket-next` module, executed in both JVM and native mode. This
+  test will verify that the following metrics are correctly produced for both 
+  the websockets next client and server:
     * connection error counter
     * connection counter
     * endpoint error counter
