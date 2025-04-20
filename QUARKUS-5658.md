@@ -2,6 +2,10 @@
 
 Jira: https://issues.redhat.com/browse/QUARKUS-5658
 
+Upstream documentation: [Websockets next reference guide - Telemetry](https://quarkus.io/version/main/guides/websockets-next-reference#telemetry)
+
+Code changes: https://github.com/quarkusio/quarkus/pull/41956
+
 This feature is specifically OpenTelemetry integration part of the new WebSockets Next extension.
 
 ## Scope of the testing
@@ -12,14 +16,14 @@ This feature is specifically OpenTelemetry integration part of the new WebSocket
   of the websocket connection.
 
 ### General
-* An integration test will be added to Quarkus QE test suite's `monitoring`
-  module. This test will verify that spans are created on connection open.
-  Test application will run both a websocket server and a client to verify
-  spans are created for both.
+* An integration test will be added to verify that traces are created for both
+  of the websocket operations (open and close) and that the close connection 
+  trace correctly refers to the open connection trace.
 
 ### Impact on test suites and testing automation
-* Single test case will be added to `monitoring` module for both bare metal
-  and OpenShift.
+* Single test case will be added to `websockets/websocket-next` module for both
+  bare metal and OpenShift. This test will be ran in both the JVM and native 
+  mode in both scenarios.
 
 ### Impact on resources
 * New test should be executed within a minute or single minutes for both bare
