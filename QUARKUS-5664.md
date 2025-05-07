@@ -5,7 +5,7 @@ Verify, that the user can configure actions for expired or not-yet-valid certifi
 
 ### Test cases
 - verify, that all three possible values of `quarkus.tls.trust-store.certificate-expiration-policy` property ("ignore","warn" and "reject") are working as expected
-- verify, that "ignore" is a default one
+- verify, that "warn" is a default one
 - verify, that it works for both expired and not-yet-valid certificates
 - verify, that it works in JVM and Native, create draft tests for Openshift as well (in case https://github.com/quarkus-qe/quarkus-test-framework/issues/1052 will be fixed).
 - verify, that this behavior is consistent between certificate reloads
