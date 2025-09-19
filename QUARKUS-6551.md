@@ -1,4 +1,4 @@
-# QUARKUS-6561 - OIDC Client filter - allow to trigger token refresh when REST client request results in 401
+# QUARKUS-6551 - OIDC Client filter - allow to trigger token refresh when REST client request results in 401
 
 JIRA: https://issues.redhat.com/browse/QUARKUS-6551
 
