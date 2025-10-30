@@ -21,10 +21,10 @@ For testing, new jenkins jobs will be created, using just different JDK.
 
 ## Scope of testing
 Initial focus will be on quarkus 3.27, which will be supported with this JDK.
-Also jobs for quarkus main will be added
+Also jobs for quarkus main will be added.
 
 Testsuites to be tested:
-- Quarkus QE Test Suite - baremetal and OpenShift
+- Quarkus QE Test Suite - baremetal
 - Startstop special chars
 - Startstop code.quarkus
 - Quickstarts
@@ -38,8 +38,6 @@ New jenkins jobs will be created, for each tested test suite.
 Expected execution time will be similar as in other cases for these TS:
 - Quarkus QE Test Suite - baremetal - 2h
   - This time is average for entire module, if tests run in parallel. In sequence those tests would take about 12 hours.
-- Quarkus QE Test Suite - OpenShift - 2h
-  - This time is average for entire module, if tests run in parallel. In sequence those tests would take about 9 hours.
 - StartStop special chars - 15m
 - StartStop code quarkus - 1h 
 - Quickstarts - 1h
