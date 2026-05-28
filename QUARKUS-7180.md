@@ -11,6 +11,8 @@ Previously, security annotations placed on Jakarta Data repository interfaces or
 This feature adds support for securing Jakarta Data repository with security annotations. The upstream documentation also describes limitations for generic repository methods using type variables or wildcards.
 
 ## Scope of the testing
+NOTE: Current planned testing coverage targets blocking Hibernate ORM Jakarta Data repositories only and does not include reactive Jakarta Data repositories.
+
 The testing will focus on validating that security annotations are correctly enforced on Jakarta Data repository interfaces and repository methods.
 
 The following scenarios will be covered: 
