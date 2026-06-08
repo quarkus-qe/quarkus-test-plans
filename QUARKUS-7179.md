@@ -41,7 +41,7 @@ This module already contains REST Data Panache security tests from QUARKUS-2788.
 
 ### Impact on resources
 
-Tests will be executed on JVM, Native and OpenShift environments.
+Tests will be executed on baremetal and OpenShift in JVM and native mode.
 The new tests reuse the existing module infrastructure, so the impact should be minimal.
 Estimated execution time increase of a few minutes.
 
