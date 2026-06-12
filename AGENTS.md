@@ -28,7 +28,7 @@ Unless there is a strong reason not to, generate test plans with these sections 
 2. JIRA link
 3. Quarkus documentation and upstream links
 4. Short feature summary
-5. Scope of testing
+5. Scope of testing, extension interactions
 6. Getting familiar with the feature
 7. Existing coverage
 8. Planned coverage
@@ -76,15 +76,7 @@ Think about:
 - Common integration patterns (observability, security, data access, etc.)
 - Potential conflicts or special considerations
 
-### 5. Separate existing coverage from planned coverage
-Document:
-- what is already tested upstream
-- what is already tested in QE
-- what new coverage will be added
-
-Do not mix current state with planned work.
-
-### 6. Be specific and justify coverage decisions
+### 5. Be specific and justify coverage decisions
 Name exact test targets (modules, platforms, architectures) and explain why each was chosen.
 Examples:
 - "Testing module X because it represents typical usage"
@@ -93,26 +85,25 @@ Examples:
 
 Do not use generic statements or list scenarios without rationale.
 
-### 7. Review documentation as part of testing
+### 6. Review documentation as part of testing
 Check:
 - correctness
 - completeness
 - usability
 - whether documented configuration is covered by tests
 
-Documentation review is part of feature validation, concrete steps do not need to be described in the test plan.
+Documentation review is part of feature validation.
 
-### 8. Record blockers and open questions
+### 7. Record blockers and open questions
 Capture:
 - missing services or operators
 - unsupported environments
 - unresolved release questions
-- unknown dependencies
 - testing blockers versus functional blockers
 
 This section is optional in the test plan.
 
-### 9. Estimate resource impact
+### 8. Estimate resource impact
 State expected impact on:
 - execution time
 - cluster or machine usage
@@ -120,46 +111,14 @@ State expected impact on:
 - external dependencies
 - maintenance burden
 
-Rough estimates are acceptable if clearly labeled.
-
-## Best practices distilled from strong repository examples
-
-The following patterns were repeatedly present in strong plans by Rostislav Svoboda, Michal Jurč, and Michal Vavřík:
-
-- begin with a concise feature introduction before test details
-- include rich upstream references and follow-up links
-- clearly split existing coverage from planned coverage
-- name concrete environments, images, modules, and modes
-- justify scenario selection
-- separate upstream responsibilities from QE responsibilities
-- include documentation review in scope
-- list open questions early
-- quantify resource impact when possible
-- keep the document highly scannable with short sections and bullet lists
-
-## Agent checklist
-
-Before finalizing a test plan, verify all items below:
-
-- File name uses the issue key
-- JIRA link is present
-- Documentation and upstream links are present
-- Feature summary is short and concrete
-- Scope and non-scope are explicit
-- Extension interactions and integration points were considered
-- Existing coverage is documented
-- New coverage is concrete and actionable
-- Upstream and QE responsibilities are separated
-- Automation impact is described
-- Resource impact is estimated
-- Open questions and blockers are listed
-- Contacts and references are included
-- PR title format is correct
+Rough estimates are acceptable if clearly explained.
 
 ## Review guidelines
 
 When reviewing test plans:
 - Inspect referenced implementation and documentation
+- Review test plan with authoring rules in mind
 - Provide a concise summary (4-5 bullet points) of areas that are covered well in the test plan
 - Provide a concise summary (4-5 bullet points) of areas for improvement, and add a priority prefix to each bullet point
+- Provide a rating (0-10) of the test plan, 10 means excellent
 - Don't write any report document, present the summary directly
