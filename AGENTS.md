@@ -22,7 +22,8 @@ that tracks quality engineering efforts, test coverage strategies, and testing a
 
 ## Required structure
 
-Unless there is a strong reason not to, generate test plans with these sections in this order:
+Test plans must include the following content. Section names and order can vary based on what makes the most sense for
+the specific feature, but all essential information must be present:
 
 1. Title with issue key and feature name
 2. JIRA link
@@ -122,3 +123,8 @@ When reviewing test plans:
 - Provide a concise summary (4-5 bullet points) of areas for improvement, and add a priority prefix to each bullet point
 - Provide a rating (0-10) of the test plan, 10 means excellent
 - Don't write any report document, present the summary directly
+
+## Key principle
+
+**Content over structure**: A test plan with flexible structure but complete, well-justified content is better than one
+that follows a rigid template but lacks depth or clarity.
