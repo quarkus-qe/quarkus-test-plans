@@ -46,7 +46,7 @@ The Keycloak realm configuration will need to be updated to support SPIFFE trust
 ### Impact on resources
 
 Tests will be executed on baremetal and OpenShift in JVM and native mode.
-The new tests reuse the existing Keycloak container, so the impact should be minimal.
+The new tests require an additional Keycloak container with SPIFFE features enabled.
 The estimated execution time increases by a few minutes.
 
 ## Getting familiar with the feature
