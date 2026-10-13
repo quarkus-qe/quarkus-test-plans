@@ -98,10 +98,11 @@ will surface in scenario 1.
    `quarkus.package.jar.aot.enabled=true` with `type=AUTO` does not produce an `app-scc/` directory and that the
    application starts and serves requests normally, confirming that auto-detection does not misfire.
 
-5. **Missing cache graceful handling** (`@EnabledOnSemeru`) — after building with SCC enabled, delete the `app-scc/`
+5. **Missing cache fails fast** (`@EnabledOnSemeru`) — after building with SCC enabled, delete the `app-scc/`
    directory; start the application with `-Xshareclasses:name=quarkus-app,cacheDir=app-scc,readonly`; assert that
-   the application still starts and serves requests correctly, verifying that the Quarkus packaging does not suppress
-   the OpenJ9 `readonly` silent-fallback behaviour when the cache is absent.
+   the application fails to start and that the application logs contains 
+   `JVMSHRC226E Error opening shared class cache file`, verifying that Quarkus packaging does not alter the OpenJ9 
+   behaviour when the cache directory is absent.
 
 !!! warning
 
