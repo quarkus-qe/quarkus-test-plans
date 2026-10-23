@@ -8,6 +8,10 @@ Upstream PR: https://github.com/quarkusio/quarkus/pull/55284
 
 Follow-up issue: https://github.com/quarkusio/quarkus/issues/55336
 
+Validation issue: https://github.com/quarkusio/quarkus/issues/57767
+
+Validation PR: https://github.com/quarkusio/quarkus/pull/57777
+
 Documentation: https://quarkus.io/guides/hibernate-orm#caching
 
 Hibernate's second-level cache in Quarkus is backed by Caffeine, and until now only count-based eviction was 
@@ -32,7 +36,7 @@ In scope:
   rather than returning a constant.
 * Failure modes build-time validation does not catch: `maximum-weight` without `weigher-class`, negative and zero
   `maximum-weight`, and a `weigher-class` that does not resolve, does not implement `Weigher`, or has no public
-  no-arg constructor.
+  no-arg constructor. Covered upstream, see Scenario 2.
 * Named persistence units, and coexistence of count-based and weight-based regions in the same persistence unit.
 * Interaction with `expiration.max-idle` on a weight-based region.
 
@@ -79,7 +83,7 @@ In the QE suite there is no 2LC memory coverage.
 
 ## Planned coverage
 
-Scenarios 1 to 3 extend `hibernate/hibernate-orm`: it already owns a cacheable entity in a named persistence
+Scenarios 1 and 3 extend `hibernate/hibernate-orm`: it already owns a cacheable entity in a named persistence
 unit and already runs the full matrix. A new cacheable entity with a large variable-length `data` column is added, 
 together with a weigher deriving weight from the cached value and an endpoint exposing the region's maximum weight, 
 current weighted size and whether a given id is still cached.
@@ -89,13 +93,24 @@ current weighted size and whether a given id is still cached.
    `maximum-weight` and the earliest entries are gone, while the entry count alone would not have triggered
    count-based eviction.
 
+   *Note:* which entries survive is not asserted. Caffeine's admission policy evicts by access
+   frequency, not insertion order, and for this workload it tends to keep the earliest entries. Forcing reads on
+   the latest entries only changes that past a threshold set by Caffeine internals. The test instead asserts that
+   the region is non-empty, retains no more entries than fit in `maximum-weight`, and that its weighted size
+   matches the weigher's per-entry weight.
+
 2. **Configuration values build-time validation does not reject** — upstream validation covers only the two
-   mutually exclusive combinations, so each value below reaches persistence-unit bootstrap (JVM-only).
+   mutually exclusive combinations, so each value below reaches persistence-unit bootstrap.
 
    *Invalid `weigher-class`* — a name that does not resolve, a class not implementing `Weigher`, and one without a
    public no-arg constructor.
 
    *Boundary `maximum-weight` values* — `maximum-weight` without `weigher-class`, a negative value, and zero.
+
+   *Moved upstream.* Testing these cases exposed two bugs, reported in
+   [#57767](https://github.com/quarkusio/quarkus/issues/57767): a negative `maximum-weight` silently fell back to
+   count-based eviction, and `maximum-weight` without `weigher-class` failed at startup although the documentation
+   promised a default weight of 1.
 
 3. **Mixed regions and expiration** — one region on `object-count` and one on `maximum-weight` in the same unit, with
    `expiration.max-idle` set explicitly on the weight-based one. Verify each evicts by its own policy and that idle
@@ -127,4 +142,6 @@ The added tests should have **low to moderate impact** on resources:
 * https://github.com/quarkusio/quarkus/issues/55282
 * https://github.com/quarkusio/quarkus/pull/55284
 * https://github.com/quarkusio/quarkus/issues/55336
+* https://github.com/quarkusio/quarkus/issues/57767
+* https://github.com/quarkusio/quarkus/pull/57777
 * https://github.com/ben-manes/caffeine/wiki/Eviction#size-based
